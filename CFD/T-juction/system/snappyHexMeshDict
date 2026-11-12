@@ -1,0 +1,198 @@
+FoamFile
+{
+	version	2.0;
+	class	dictionary;
+	format	ascii;
+	location	"system";
+	object	snappyHexMeshDict;
+}
+castellatedMesh	true;
+snap	true;
+addLayers	false;
+geometry
+{
+	Main_pipe.stl
+	{
+		type	triSurfaceMesh;
+		simflowType	primitive;
+		primitiveType	cylinder;
+		name	Main_pipe;
+		point1	(0 0 0);
+		point2	(0 0 0.5);
+		radius	0.025;
+		faceGroups
+		{
+			cylinder
+			{
+				name	Main_pipe;
+			}
+			disk1
+			{
+				name	Main_pipe;
+			}
+			disk2
+			{
+				name	Main_pipe;
+			}
+		}
+	}
+	side_pipe.stl
+	{
+		type	triSurfaceMesh;
+		simflowType	primitive;
+		primitiveType	cylinder;
+		name	side_pipe;
+		point1	(0 0 0.15);
+		point2	(0 0.15 0.15);
+		radius	0.015;
+		faceGroups
+		{
+			cylinder
+			{
+				name	side_pipe;
+			}
+			disk1
+			{
+				name	side_pipe;
+			}
+			disk2
+			{
+				name	side_pipe;
+			}
+		}
+	}
+	unite.stl
+	{
+		type	triSurfaceMesh;
+		simflowType	brep;
+		topoType	compound;
+		name	unite;
+		faceGroups
+		{
+			face_2
+			{
+				name	unite_inlet_cold;
+			}
+			face_5
+			{
+				name	unite_inlet_hot;
+			}
+			face_3
+			{
+				name	unite_outlet;
+			}
+			face_1
+			{
+				name	unite_walls;
+			}
+			face_4
+			{
+				name	unite_walls;
+			}
+		}
+	}
+}
+castellatedMeshControls
+{
+	locationInMesh	(0 0 0.1);
+	refinementSurfaces
+	{
+		unite
+		{
+			level	( 2 2 );
+			patchInfo
+			{
+				type	wall;
+			}
+		}
+	}
+	refinementRegions
+	{
+		unite
+		{
+			mode	distance;
+			levels	((0.0 0));
+		}
+	}
+	limitRegions
+	{
+	}
+	features	
+	(
+	{
+		file	"unite.eMesh";
+		levels	((0 0));
+	}
+	);
+	maxLocalCells	2000000;
+	maxGlobalCells	50000000;
+	nCellsBetweenLevels	4;
+	maxLoadUnbalance	0.1;
+	minRefinementCells	10;
+	resolveFeatureAngle	30.0;
+	allowFreeStandingZoneFaces	true;
+}
+snapControls
+{
+	tolerance	1.0;
+	nSmoothPatch	3;
+	nSolveIter	500;
+	nRelaxIter	5;
+	nFeatureSnapIter	10;
+	implicitFeatureSnap	false;
+	explicitFeatureSnap	true;
+	multiRegionFeatureSnap	true;
+	avoidDiagonal	false;
+	releasePoints	false;
+	nFaceSplitInterval	5;
+}
+addLayersControls
+{
+	layers
+	{
+	}
+	relativeSizes	true;
+	minThickness	0.1;
+	firstLayerThickness	0.2;
+	expansionRatio	1.25;
+	nGrow	0;
+	featureAngle	180.0;
+	maxFaceThicknessRatio	0.5;
+	nSmoothSurfaceNormals	5;
+	nSmoothThickness	10;
+	minMedialAxisAngle	90.0;
+	maxThicknessToMedialRatio	0.5;
+	nMedialAxisIter	100;
+	nSmoothNormals	3;
+	slipFeatureAngle	30.0;
+	nRelaxIter	5;
+	nBufferCellsNoExtrude	0;
+	nLayerIter	50;
+	nRelaxedIter	20;
+	detectExtrusionIsland	true;
+	nOuterIter	1;
+}
+meshQualityControls
+{
+	maxNonOrtho	65.0;
+	maxBoundarySkewness	20.0;
+	maxInternalSkewness	4.0;
+	maxConcave	80.0;
+	minVol	1.0E-14;
+	minTetQuality	1.0E-20;
+	minArea	-1.0;
+	minTwist	0.02;
+	minTriangleTwist	-1.0;
+	minDeterminant	0.01;
+	minFaceWeight	0.05;
+	minVolRatio	0.01;
+	minVolCollapseRatio	0.1;
+	nSmoothScale	4;
+	errorReduction	0.75;
+	relaxed
+	{
+		maxNonOrtho	75.0;
+	}
+}
+mergeTolerance	1.0E-6;
+debug	0;
