@@ -1,0 +1,40 @@
+FoamFile
+{
+	version	2.0;
+	format	ascii;
+	class	dictionary;
+	location	"system";
+	object	createPatchDict;
+}
+pointSync	false;
+patches	(
+	{
+		name	unite_inlet_wall;
+		patchInfo
+		{
+			type	wall;
+		}
+		constructFrom	patches;
+		patches	(unite_face_1);
+	}
+
+	{
+		name	unite_wall;
+		patchInfo
+		{
+			type	wall;
+		}
+		constructFrom	patches;
+		patches	(unite_face_2 unite_face_3 unite_face_4 unite_face_5 unite_face_6 unite_face_7 unite_face_8 unite_face_9 unite_face_10 unite_face_11);
+	}
+
+	{
+		name	unite_outlet_wall;
+		patchInfo
+		{
+			type	wall;
+		}
+		constructFrom	patches;
+		patches	(unite_face_12);
+	}
+);

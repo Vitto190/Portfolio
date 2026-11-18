@@ -1,0 +1,308 @@
+FoamFile
+{
+	version	2.0;
+	class	dictionary;
+	format	ascii;
+	location	"system";
+	object	snappyHexMeshDict;
+}
+castellatedMesh	true;
+snap	true;
+addLayers	true;
+geometry
+{
+	box_1.stl
+	{
+		type	triSurfaceMesh;
+		simflowType	primitive;
+		primitiveType	box;
+		name	box_1;
+		max	(2 1 1);
+		min	(0 0 0);
+		faceGroups
+		{
+			x_min
+			{
+				name	box_1;
+			}
+			x_max
+			{
+				name	box_1;
+			}
+			y_min
+			{
+				name	box_1;
+			}
+			y_max
+			{
+				name	box_1;
+			}
+			z_min
+			{
+				name	box_1;
+			}
+			z_max
+			{
+				name	box_1;
+			}
+		}
+	}
+	box_2.stl
+	{
+		type	triSurfaceMesh;
+		simflowType	primitive;
+		primitiveType	box;
+		name	box_2;
+		max	(3 0 1);
+		min	(1 -1 0);
+		faceGroups
+		{
+			x_min
+			{
+				name	box_2;
+			}
+			x_max
+			{
+				name	box_2;
+			}
+			y_min
+			{
+				name	box_2;
+			}
+			y_max
+			{
+				name	box_2;
+			}
+			z_min
+			{
+				name	box_2;
+			}
+			z_max
+			{
+				name	box_2;
+			}
+		}
+	}
+	unite.stl
+	{
+		type	triSurfaceMesh;
+		simflowType	brep;
+		topoType	compound;
+		name	unite;
+		faceGroups
+		{
+			face_1
+			{
+				name	unite_inlet_wall;
+			}
+			face_2
+			{
+				name	unite_wall;
+			}
+			face_3
+			{
+				name	unite_wall;
+			}
+			face_4
+			{
+				name	unite_wall;
+			}
+			face_5
+			{
+				name	unite_wall;
+			}
+			face_6
+			{
+				name	unite_wall;
+			}
+			face_7
+			{
+				name	unite_wall;
+			}
+			face_8
+			{
+				name	unite_wall;
+			}
+			face_9
+			{
+				name	unite_wall;
+			}
+			face_10
+			{
+				name	unite_wall;
+			}
+			face_11
+			{
+				name	unite_wall;
+			}
+			face_12
+			{
+				name	unite_outlet_wall;
+			}
+		}
+	}
+}
+castellatedMeshControls
+{
+	locationInMesh	(1.5 0 0.5);
+	refinementSurfaces
+	{
+		unite
+		{
+			level	( 1 2 );
+			patchInfo
+			{
+				type	wall;
+			}
+		}
+	}
+	refinementRegions
+	{
+		unite
+		{
+			mode	distance;
+			levels	((0.0 0));
+		}
+	}
+	limitRegions
+	{
+	}
+	features	
+	(
+	{
+		file	"unite.eMesh";
+		levels	((0 0));
+	}
+	);
+	maxLocalCells	2000000;
+	maxGlobalCells	50000000;
+	nCellsBetweenLevels	4;
+	maxLoadUnbalance	0.1;
+	minRefinementCells	10;
+	resolveFeatureAngle	30.0;
+	allowFreeStandingZoneFaces	true;
+}
+snapControls
+{
+	tolerance	1.0;
+	nSmoothPatch	3;
+	nSolveIter	500;
+	nRelaxIter	5;
+	nFeatureSnapIter	10;
+	implicitFeatureSnap	false;
+	explicitFeatureSnap	true;
+	multiRegionFeatureSnap	true;
+	avoidDiagonal	false;
+	releasePoints	false;
+	nFaceSplitInterval	5;
+}
+addLayersControls
+{
+	layers
+	{
+		unite_face_2
+		{
+			nSurfaceLayers	3;
+			expansionRatio	1.2;
+			firstLayerThickness	0.2;
+		}
+		unite_face_3
+		{
+			nSurfaceLayers	3;
+			expansionRatio	1.2;
+			firstLayerThickness	0.2;
+		}
+		unite_face_4
+		{
+			nSurfaceLayers	3;
+			expansionRatio	1.2;
+			firstLayerThickness	0.2;
+		}
+		unite_face_5
+		{
+			nSurfaceLayers	3;
+			expansionRatio	1.2;
+			firstLayerThickness	0.2;
+		}
+		unite_face_6
+		{
+			nSurfaceLayers	3;
+			expansionRatio	1.2;
+			firstLayerThickness	0.2;
+		}
+		unite_face_7
+		{
+			nSurfaceLayers	3;
+			expansionRatio	1.2;
+			firstLayerThickness	0.2;
+		}
+		unite_face_8
+		{
+			nSurfaceLayers	3;
+			expansionRatio	1.2;
+			firstLayerThickness	0.2;
+		}
+		unite_face_9
+		{
+			nSurfaceLayers	3;
+			expansionRatio	1.2;
+			firstLayerThickness	0.2;
+		}
+		unite_face_10
+		{
+			nSurfaceLayers	3;
+			expansionRatio	1.2;
+			firstLayerThickness	0.2;
+		}
+		unite_face_11
+		{
+			nSurfaceLayers	3;
+			expansionRatio	1.2;
+			firstLayerThickness	0.2;
+		}
+	}
+	relativeSizes	true;
+	minThickness	0.1;
+	firstLayerThickness	0.2;
+	expansionRatio	1.25;
+	nGrow	0;
+	featureAngle	180.0;
+	maxFaceThicknessRatio	0.5;
+	nSmoothSurfaceNormals	5;
+	nSmoothThickness	10;
+	minMedialAxisAngle	90.0;
+	maxThicknessToMedialRatio	0.5;
+	nMedialAxisIter	100;
+	nSmoothNormals	3;
+	slipFeatureAngle	30.0;
+	nRelaxIter	5;
+	nBufferCellsNoExtrude	0;
+	nLayerIter	50;
+	nRelaxedIter	20;
+	detectExtrusionIsland	true;
+	nOuterIter	1;
+}
+meshQualityControls
+{
+	maxNonOrtho	65.0;
+	maxBoundarySkewness	20.0;
+	maxInternalSkewness	4.0;
+	maxConcave	80.0;
+	minVol	1.0E-14;
+	minTetQuality	1.0E-20;
+	minArea	-1.0;
+	minTwist	0.02;
+	minTriangleTwist	-1.0;
+	minDeterminant	0.01;
+	minFaceWeight	0.05;
+	minVolRatio	0.01;
+	minVolCollapseRatio	0.1;
+	nSmoothScale	4;
+	errorReduction	0.75;
+	relaxed
+	{
+		maxNonOrtho	75.0;
+	}
+}
+mergeTolerance	1.0E-6;
+debug	0;

@@ -1,0 +1,30 @@
+FoamFile
+{
+	version	2.0;
+	format	ascii;
+	class	polyBoundaryMesh;
+	location	"constant/polyMesh";
+	object	boundary;
+	arch	"LSB;label=32;scalar=64";
+}
+3
+(
+	unite_inlet_wall
+	{
+		type	patch;
+		startFace	885534;
+		nFaces	3892;
+	}
+	unite_wall
+	{
+		type	wall;
+		startFace	889426;
+		nFaces	42120;
+	}
+	unite_outlet_wall
+	{
+		type	patch;
+		startFace	931546;
+		nFaces	3892;
+	}
+)

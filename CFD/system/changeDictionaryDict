@@ -1,0 +1,94 @@
+FoamFile
+{
+	version	2.0;
+	format	binary;
+	class	dictionary;
+	location	"system";
+	object	changeDictionaryDict;
+}
+p
+{
+	boundaryField
+	{
+		unite_inlet_wall
+		{
+			type	zeroGradient;
+		}
+		unite_wall
+		{
+			type	zeroGradient;
+		}
+		unite_outlet_wall
+		{
+			type	fixedValue;
+			value	uniform 0;
+		}
+	}
+}
+U
+{
+	boundaryField
+	{
+		unite_inlet_wall
+		{
+			type	surfaceNormalFixedValue;
+			refValue	uniform -7;
+		}
+		unite_wall
+		{
+			type	noSlip;
+		}
+		unite_outlet_wall
+		{
+			type	pressureInletOutletVelocity;
+		}
+	}
+}
+k
+{
+	boundaryField
+	{
+		unite_inlet_wall
+		{
+			type	turbulentIntensityKineticEnergyInlet;
+			intensity	0.05;
+		}
+		unite_wall
+		{
+			type	kqRWallFunction;
+		}
+		unite_outlet_wall
+		{
+			type	zeroGradient;
+		}
+	}
+}
+omega
+{
+	boundaryField
+	{
+		unite_inlet_wall
+		{
+			type	turbulentMixingLengthFrequencyInlet;
+			mixingLength	0.001;
+		}
+		unite_wall
+		{
+			type	omegaWallFunction;
+		}
+		unite_outlet_wall
+		{
+			type	zeroGradient;
+		}
+	}
+}
+nut
+{
+	boundaryField
+	{
+		unite_wall
+		{
+			type	nutUWallFunction;
+		}
+	}
+}

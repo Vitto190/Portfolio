@@ -1,0 +1,220 @@
+solid face_1
+facet normal -1.0 0.0 0.0
+outer loop
+vertex 0.0 1.0 0.0
+vertex 0.0 0.0 0.0
+vertex 0.0 0.0 1.0
+endloop
+endfacet
+facet normal -1.0 0.0 0.0
+outer loop
+vertex 0.0 1.0 1.0
+vertex 0.0 1.0 0.0
+vertex 0.0 0.0 1.0
+endloop
+endfacet
+endsolid face_1
+solid face_2
+facet normal 0.0 -1.0 0.0
+outer loop
+vertex 0.0 0.0 0.0
+vertex 1.0 0.0 0.0
+vertex 1.0 0.0 1.0
+endloop
+endfacet
+facet normal 0.0 -1.0 0.0
+outer loop
+vertex 0.0 0.0 1.0
+vertex 0.0 0.0 0.0
+vertex 1.0 0.0 1.0
+endloop
+endfacet
+endsolid face_2
+solid face_3
+facet normal 0.0 0.0 1.0
+outer loop
+vertex 1.0 0.0 1.0
+vertex 0.0 1.0 1.0
+vertex 0.0 0.0 1.0
+endloop
+endfacet
+facet normal 0.0 0.0 1.0
+outer loop
+vertex 2.0 1.0 1.0
+vertex 1.0 0.0 1.0
+vertex 2.0 0.0 1.0
+endloop
+endfacet
+facet normal 0.0 0.0 1.0
+outer loop
+vertex 2.0 1.0 1.0
+vertex 0.0 1.0 1.0
+vertex 1.0 0.0 1.0
+endloop
+endfacet
+endsolid face_3
+solid face_4
+facet normal 0.0 1.0 0.0
+outer loop
+vertex 2.0 1.0 1.0
+vertex 2.0 1.0 0.0
+vertex 0.0 1.0 0.0
+endloop
+endfacet
+facet normal 0.0 1.0 0.0
+outer loop
+vertex 2.0 1.0 1.0
+vertex 0.0 1.0 0.0
+vertex 0.0 1.0 1.0
+endloop
+endfacet
+endsolid face_4
+solid face_5
+facet normal 0.0 0.0 -1.0
+outer loop
+vertex 0.0 0.0 0.0
+vertex 0.0 1.0 0.0
+vertex 1.0 0.0 0.0
+endloop
+endfacet
+facet normal 0.0 0.0 -1.0
+outer loop
+vertex 2.0 0.0 0.0
+vertex 1.0 0.0 0.0
+vertex 2.0 1.0 0.0
+endloop
+endfacet
+facet normal 0.0 0.0 -1.0
+outer loop
+vertex 1.0 0.0 0.0
+vertex 0.0 1.0 0.0
+vertex 2.0 1.0 0.0
+endloop
+endfacet
+endsolid face_5
+solid face_6
+facet normal -1.0 0.0 0.0
+outer loop
+vertex 1.0 0.0 0.0
+vertex 1.0 -1.0 0.0
+vertex 1.0 -1.0 1.0
+endloop
+endfacet
+facet normal -1.0 0.0 0.0
+outer loop
+vertex 1.0 0.0 1.0
+vertex 1.0 0.0 0.0
+vertex 1.0 -1.0 1.0
+endloop
+endfacet
+endsolid face_6
+solid face_7
+facet normal 1.0 0.0 0.0
+outer loop
+vertex 2.0 0.0 1.0
+vertex 2.0 0.0 0.0
+vertex 2.0 1.0 0.0
+endloop
+endfacet
+facet normal 1.0 0.0 0.0
+outer loop
+vertex 2.0 0.0 1.0
+vertex 2.0 1.0 0.0
+vertex 2.0 1.0 1.0
+endloop
+endfacet
+endsolid face_7
+solid face_8
+facet normal 0.0 0.0 1.0
+outer loop
+vertex 2.0 0.0 1.0
+vertex 1.0 0.0 1.0
+vertex 1.0 -1.0 1.0
+endloop
+endfacet
+facet normal 0.0 0.0 1.0
+outer loop
+vertex 3.0 -1.0 1.0
+vertex 2.0 0.0 1.0
+vertex 1.0 -1.0 1.0
+endloop
+endfacet
+facet normal 0.0 0.0 1.0
+outer loop
+vertex 3.0 0.0 1.0
+vertex 2.0 0.0 1.0
+vertex 3.0 -1.0 1.0
+endloop
+endfacet
+endsolid face_8
+solid face_9
+facet normal 0.0 0.0 -1.0
+outer loop
+vertex 1.0 -1.0 0.0
+vertex 1.0 0.0 0.0
+vertex 2.0 0.0 0.0
+endloop
+endfacet
+facet normal 0.0 0.0 -1.0
+outer loop
+vertex 1.0 -1.0 0.0
+vertex 2.0 0.0 0.0
+vertex 3.0 -1.0 0.0
+endloop
+endfacet
+facet normal 0.0 0.0 -1.0
+outer loop
+vertex 3.0 -1.0 0.0
+vertex 2.0 0.0 0.0
+vertex 3.0 0.0 0.0
+endloop
+endfacet
+endsolid face_9
+solid face_10
+facet normal 0.0 -1.0 0.0
+outer loop
+vertex 1.0 -1.0 0.0
+vertex 3.0 -1.0 0.0
+vertex 3.0 -1.0 1.0
+endloop
+endfacet
+facet normal 0.0 -1.0 0.0
+outer loop
+vertex 1.0 -1.0 1.0
+vertex 1.0 -1.0 0.0
+vertex 3.0 -1.0 1.0
+endloop
+endfacet
+endsolid face_10
+solid face_11
+facet normal 0.0 1.0 0.0
+outer loop
+vertex 3.0 0.0 1.0
+vertex 3.0 0.0 0.0
+vertex 2.0 0.0 0.0
+endloop
+endfacet
+facet normal 0.0 1.0 0.0
+outer loop
+vertex 3.0 0.0 1.0
+vertex 2.0 0.0 0.0
+vertex 2.0 0.0 1.0
+endloop
+endfacet
+endsolid face_11
+solid face_12
+facet normal 1.0 0.0 0.0
+outer loop
+vertex 3.0 -1.0 1.0
+vertex 3.0 -1.0 0.0
+vertex 3.0 0.0 0.0
+endloop
+endfacet
+facet normal 1.0 0.0 0.0
+outer loop
+vertex 3.0 -1.0 1.0
+vertex 3.0 0.0 0.0
+vertex 3.0 0.0 1.0
+endloop
+endfacet
+endsolid face_12
